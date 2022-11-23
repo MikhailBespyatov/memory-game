@@ -1,0 +1,59 @@
+.card {
+    position: relative;
+    cursor: pointer;
+}
+
+.emptyCard {
+    width: 100%;
+    height: 114px;
+    background-color: grey;
+}
+
+.wrapper {
+    transform-style: preserve-3d;
+}
+
+.card_open .card_opened {
+    transform: rotateY(360deg);
+}
+
+.card_open .card_closed {
+    transform: rotateY(180deg);
+}
+
+.card_opened,
+.card_closed {
+    width: 100%;
+    height: 114px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+
+    div {
+        transform: translateZ(20px);
+    }
+}
+
+.card_opened {
+    background-color: #E5E5E5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+}
+
+.card_closed {
+    background-color: red;
+    position: relative;
+    transform: rotateY(0);
+
+    span {
+        font-size: 60px;
+        color: white;
+        font-weight: 600;
+    }
+}
